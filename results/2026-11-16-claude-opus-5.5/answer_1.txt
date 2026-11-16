@@ -1,0 +1,4 @@
+Readable blocks: sort then dup (tasks 5 and 2); a +9-and-drop-last unit (tasks 16: +9 with one init; task 6: +18 with two inits, i.e. the unit twice), which add5, add5, dec, init produces; digits via mod10 followed by trimming (task 4: mod10, init, init; task 9: mod10, tail, tail, init); fourfold repetition of digits (task 11).
+```json
+{"macros": [["sort","dup"],["add5","add5","dec","init"],["mod10","init"],["init","init"],["tail","tail"],["dup","dup"]]}
+```

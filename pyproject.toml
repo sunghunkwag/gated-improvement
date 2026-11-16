@@ -1,6 +1,6 @@
 [project]
 name = "gated-improvement"
-version = "0.1.0"
+version = "0.1.1"
 description = "gated-improvement — improve a program-synthesis solver's configuration; rewarded only by a sealed, compute-matched, sign-test-gated holdout (single-turn, reward-hacking resistant)."
 readme = "README.md"
 license = "Apache-2.0"

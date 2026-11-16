@@ -1,0 +1,4 @@
+Readable blocks: drop the first two (tail, tail) in task 3; x-2 with the last two dropped in task 19 (dec, init twice); (x-1)//2 = dec then half in task 14; adjacent sums mod 10 (pairsum, mod10) in task 6.
+```json
+{"macros": [["tail","tail"],["dec","init"],["dec","half"],["pairsum","mod10"],["init","init"]]}
+```

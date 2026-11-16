@@ -1,0 +1,4 @@
+Recurring blocks I can read off the examples: x mod 128 (double, half) after a tail in tasks 10 and 16; dup then tail (2n-1 lengths) in tasks 1 and 16; fourfold repetition (dup, dup) in tasks 17, 19, 20; x//4 (half, half) in 17 and 20; x-2 / x-3 (dec, dec) in 14 and 19; x+2 (inc, inc) before the halving in 17; reverse then dec in task 4; 249-x (add5, inc, then neg) in task 6; cummax with a reverse in task 9.
+```json
+{"macros": [["double","half"],["dup","tail"],["dup","dup"],["half","half"],["dec","dec"],["inc","inc"],["reverse","dec"],["add5","inc"],["cummax","reverse"]]}
+```

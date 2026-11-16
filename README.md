@@ -68,6 +68,19 @@ The same 10 further worlds and the same answers at three gate levels (one gate r
 
 Noise passes less often than the nominal level because the exact sign test is conservative at these sample sizes, and when it does pass, the separate confirm batch keeps its reward at zero on average. `alpha` is the density knob: a looser gate rewards partial knowledge more often, at the cost of more zero-mean noise in the reward.
 
+## First model run
+
+Claude Opus 5.5 answered four fresh worlds (single turn, `n_shown` 20, default gate) from the prompt alone, without tools. It is the agent that built this environment, so it knew the generator's design but not the secret salt or any hidden library; treat this as a first difficulty probe, not an independent benchmark. Prompts, answers, the salt (published so the scores can be re-checked; never reuse it for evaluation) and scores are in `results/2026-11-16-claude-opus-5.5/`.
+
+| World | Macros proposed | True blocks among them | Sealed tasks up / down | Sign-test p | Reward | Hidden library's reward |
+|---|---:|---:|---:|---:|---:|---:|
+| 0 | 9 | 1 | 6 / 1 | 0.063 | 0 | 0.426 |
+| 1 | 6 | 1 | 1 / 4 | 0.969 | 0 | 0.552 |
+| 2 | 6 | 3 | 5 / 2 | 0.227 | 0 | 0.577 |
+| 3 | 5 | 2 | 3 / 2 | 0.500 | 0 | 0.347 |
+
+The model recovered 1–3 of the hidden blocks per world and moved more sealed tasks up than down overall (15 vs 9), but never enough for the gate, so every reward is 0; world 0 missed it at p = 0.063. At this size the task is hard and its reward sparse for a strong model answering in one turn, which is the regime where `alpha` (0.1 would have passed world 0) and `n_shown` matter. Results for other models are welcome.
+
 ## Quickstart
 
 ```bash
@@ -106,7 +119,7 @@ Scoring runs on the evaluator's CPU: roughly 1–6 seconds of one core per rollo
 - **Sparse for weak answers.** Partial knowledge is rewarded only when it moves enough sealed tasks to pass the gate. Early in training most rollouts may score 0; `alpha`, `n_shown` and the number of streams are the levers.
 - **Secrecy is the salt.** The generator is public; anyone with the salt can recompute every world. Never evaluate on a salt that has been published.
 - **Metering is an integrity check, not a sandbox.** It catches unmetered execution inside the evaluator. In the default single-turn setup the agent runs no code. A multi-turn variant with a code-executing harness must use an isolated runtime (`docker` or `prime`), not `subprocess`.
-- **No model results yet.** The environment has been exercised end to end only with the scripted stand-in model. Baselines for real models are the next step.
+- **One model so far.** Only the first model run above exists, by the agent that built the environment. Independent baselines are still missing.
 
 ## Provenance and license
 

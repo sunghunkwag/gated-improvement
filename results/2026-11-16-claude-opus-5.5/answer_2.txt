@@ -1,0 +1,4 @@
+Readable blocks: digits shifted by 5 or 10 (mod10 then add5, sometimes add5 twice, often followed by cummax) in tasks 3, 12, 13, 2; evens then init (task 17); 254 - x = neg then dec (task 9); half then diff (task 10); (x+5)//2 = add5 then half at the start of task 1.
+```json
+{"macros": [["mod10","add5"],["add5","add5"],["evens","init"],["neg","dec"],["half","diff"],["add5","half"]]}
+```

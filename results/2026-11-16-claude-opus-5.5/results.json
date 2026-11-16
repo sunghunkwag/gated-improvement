@@ -1,0 +1,51 @@
+{
+ "model": "claude-opus-5-5",
+ "setting": "single turn, n_shown=20, alpha=0.05, n_streams=2, budget=3000",
+ "salt": "411f1baf28b4463af62ddbbaebb04c82",
+ "results": [
+  {
+   "world": 0,
+   "macros": 9,
+   "true_blocks_found": 1,
+   "dev_tasks_up": 6.0,
+   "dev_tasks_down": 1.0,
+   "dev_p_value": 0.0625,
+   "gate_pass": 0.0,
+   "reward": 0.0,
+   "gold_reward": 0.426
+  },
+  {
+   "world": 1,
+   "macros": 6,
+   "true_blocks_found": 1,
+   "dev_tasks_up": 1.0,
+   "dev_tasks_down": 4.0,
+   "dev_p_value": 0.9688,
+   "gate_pass": 0.0,
+   "reward": 0.0,
+   "gold_reward": 0.552
+  },
+  {
+   "world": 2,
+   "macros": 6,
+   "true_blocks_found": 3,
+   "dev_tasks_up": 5.0,
+   "dev_tasks_down": 2.0,
+   "dev_p_value": 0.2266,
+   "gate_pass": 0.0,
+   "reward": 0.0,
+   "gold_reward": 0.577
+  },
+  {
+   "world": 3,
+   "macros": 5,
+   "true_blocks_found": 2,
+   "dev_tasks_up": 3.0,
+   "dev_tasks_down": 2.0,
+   "dev_p_value": 0.5,
+   "gate_pass": 0.0,
+   "reward": 0.0,
+   "gold_reward": 0.347
+  }
+ ]
+}
